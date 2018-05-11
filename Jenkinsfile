@@ -2,13 +2,13 @@ node {
 
     checkout scm
 
-    env.DOCKER_API_VERSION="1.23"
+    env.DOCKER_API_VERSION="1.13.1"
     
     sh "git rev-parse --short HEAD > commit-id"
 
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
     appName = "hello-kenzan"
-    registryHost = "172.16.21.253:10080/library/"
+    registryHost = "172.28.5.75/chtest/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
 
