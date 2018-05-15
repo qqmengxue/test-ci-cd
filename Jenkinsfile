@@ -2,7 +2,7 @@ podTemplate(label: 'jenkins-slave-pod',  containers: [
     /*
     containerTemplate(name: 'golang', image: 'registry.cn-hangzhou.aliyuncs.com/spacexnice/golang:1.6.3', ttyEnabled: true, command: 'cat'),
     */
-    containerTemplate(name: 'docker', image: '172.28.5.75/library/jenkins-jnlp-slave:alpine', command: '', ttyEnabled: false)
+    containerTemplate(name: 'docker', image: 'registry.cn-hangzhou.aliyuncs.com/spacexnice/jenkins-slave:latest', command: '', ttyEnabled: false)
   ]
   ,volumes: [
 /*
