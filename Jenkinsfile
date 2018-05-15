@@ -27,9 +27,9 @@ node('jenkins-slave-pod') {
     env.BUILDIMG=imageName
 
     stage "Build"
-    container('docker') {
+    
         sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
-    }
+    
     stage "Push"
     container('docker') {
         sh "docker push ${imageName}"
