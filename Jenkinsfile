@@ -11,6 +11,7 @@ podTemplate(label: 'jenkins-slave-pod',  containers: [
      hostPathVolume(hostPath: '/root/work/jenkins', mountPath: '/home/jenkins'),
      hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock'),
      hostPathVolume(hostPath: '/tmp/', mountPath: '/tmp/'),
+     hostPathVolume(hostPath: '/root/.docker/', mountPath: '/root/.docker/'),
   ]){
 node('jenkins-slave-pod') {
 
